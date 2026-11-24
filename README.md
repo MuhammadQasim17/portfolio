@@ -1,89 +1,134 @@
 # Muhammad Qasim — Software Engineering Portfolio
 
-A modern, high-performance personal engineering portfolio showcasing production-grade full-stack web platforms, edge-native Android mobile architectures, and cross-platform desktop audit systems.
+> Software Engineer specializing in cross-platform desktop architectures using Flutter and Dart, alongside production-grade native Android systems engineering with Java and Kotlin. Experienced in building distributed full-stack web platforms, offline-first data pipelines, and responsive client architectures with clean design systems.
 
-**Live Profile:** Software Engineer (BSSE Graduate, University of Sargodha)  
-**Primary Focus:** Web Systems, Native Mobile (Android SDK 35), Edge AI & Distributed Backends  
-
----
-
-## ⚡ Tech Stack & Architecture
-
-- **Core Framework:** [React 19](https://react.dev/) + [Vite](https://vite.dev/)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with custom `@custom-variant dark` support
-- **Icons & UI:** [Lucide React](https://lucide.dev/) + SVG Brand Components
-- **Theming:** Full-spectrum Dark/Light mode switcher with dynamic root class toggling and `localStorage` persistence (`'portfolio-theme'`, defaulting to signature `slate-950` dark aesthetic)
-- **Tooling:** ESLint 9 flat config, HMR, KaTeX-free responsive UI layout
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-iota-one-pfywhhi4lb.vercel.app)
+[![React 19](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 
 ---
 
-## 🚀 Featured Engineering Systems
+## Live Deployment & Preview
 
-### 1. [Beacon SOS](https://github.com/MuhammadQasim17/BeaconSOS_Final) *(Flagship Mobile System)*
-A production-grade personal safety Android application (SDK 35) engineered for instant critical emergency response.
-- Multi-sensor fusion engine (`SensorManager` accelerometer shake detection + `AudioRecord` background voice keyword trigger).
-- Persistent Android 14+ Foreground Service with `WakeLock` CPU persistence for reliable Doze-mode execution.
-- Real-time GPS coordinate resolution via Google Play Services Fused Location Provider with autonomous SMS dispatching.
-- **Stack:** Java, Kotlin, Android SDK 35, Jetpack Compose, Material 3, Firebase, Google Maps API, SensorManager.
+The portfolio is deployed on Vercel with automatic continuous integration triggered on every push to the `main` branch.
 
-### 2. [AuraGuard](https://github.com/MuhammadQasim17/auraguard)
-An enterprise-grade, edge-native Android personal safety and anomaly inference platform.
-- 2-Phase physical fall detection state machine detecting free-fall followed by high-G impact.
-- 16kHz PCM audio stream time-domain DSP classification for acoustic anomaly inference with human speech suppression.
-- Autonomous dual-SIM SMS dispatcher and direct phone account routing via `TelecomManager`.
-- **Stack:** Kotlin, Jetpack Compose, LiteRT (On-Device ML), Room Database, Android Services.
+**Live Deployment URL:** [portfolio-iota-one-pfywhhi4lb.vercel.app](https://portfolio-iota-one-pfywhhi4lb.vercel.app)
 
-### 3. [ClairDocs Enterprise](https://github.com/MuhammadQasim17/clairdocs)
-An autonomous contract-to-invoice audit and dispute desktop system designed to eliminate billing leakage.
-- Dual document ingestion (PDF & Word `.docx`) with SHA-256 cryptographic hash verification.
-- Hybrid multi-engine LLM audit pipeline powered by Google Gemini 3.8 Flash with Groq fallback.
-- Local SQLite FFI audit vault with dynamic analytics dashboards and automated SMTP/Webhook dispatch.
-- **Stack:** Flutter, Dart, Riverpod, Gemini AI, SQLite FFI, Syncfusion PDF.
+```text
+================================================================================
+ [ Light Mode ]                                                 [ Dark Mode ]
+ ------------------------------------------------------------------------------
+  Muhammad Qasim | Software Engineer & Systems Developer
+  Punjab, Pakistan • muhammadqasim891011@gmail.com • github.com/MuhammadQasim17
+ ------------------------------------------------------------------------------
+  Core Disciplines: Flutter & Dart Desktop | Android Native SDK 35 | React 19 Web
+  Flagships: ClairDocs Enterprise (Desktop) • Beacon SOS (Native Android)
+================================================================================
+```
 
-### 4. [FieldOps Platform](https://github.com/MuhammadQasim17/fieldops-platform)
-An enterprise field service management and operations control center bridging office dispatchers with field technicians.
-- Offline-first mobile React Native architecture with local mutation queues and auto-sync.
-- Real-time Leaflet GPS fleet tracking and web dispatcher dashboard with operational telemetry.
-- Automated in-memory PDF work order certificate generation with digital signature capture.
-- **Stack:** React Native, Expo, Node.js, Express, PostgreSQL, Prisma ORM, Leaflet.
-
-### 5. [HireHub](https://github.com/MuhammadQasim17/hirehub)
-A full-stack recruitment and applicant tracking platform (ATS) connecting engineering talent with verified employers.
-- Role-Based Access Control (RBAC) supporting distinct Candidate and Recruiter personas.
-- Job discovery engine with keyword filters, 1-click applications, and duplicate submission guards.
-- Recruiter pipeline dashboard with lifecycle management and automated Nodemailer email notifications.
-- **Stack:** React 19, Vite, Tailwind CSS, Node.js, Express, PostgreSQL, Prisma ORM.
+> *Live UI Preview: Supports full dark/light theme persistence (`slate-950` dark aesthetic default) with dynamic glassmorphism and real-time category filtering.*
 
 ---
 
-## 🛠️ Local Development & Setup
+## Featured Engineering Projects
 
-### Prerequisites
-- Node.js (v18.0.0 or later recommended)
-- npm or yarn
+A scannable overview of the five production-grade engineering builds highlighted in this portfolio:
 
-### Installation
+| Project | Domain / Platform | Core Stack | Key Architectural Highlight |
+| :--- | :--- | :--- | :--- |
+| **[ClairDocs Enterprise](https://github.com/MuhammadQasim17/clairdocs)** | Cross-Platform Desktop | Flutter, Dart, Riverpod, Freezed, SQLite FFI, Gemini Flash, Syncfusion PDF, MSIX | Dual-pane PDF/Word ingestion with live SHA-256 evidentiary file hashing, deterministic financial variance math, and offline SQLite FFI vault. |
+| **[Beacon SOS](https://github.com/MuhammadQasim17/BeaconSOS_Final)** | Native Android (Safety) | Java, Kotlin, Android SDK 35, Jetpack Compose, Material 3, Firebase, SensorManager | Persistent Android 14+ Foreground Service with WakeLock Doze-mode survival, hardware accelerometer + AudioRecord sensor fusion, and automated GPS SMS dispatch. |
+| **[AuraGuard](https://github.com/MuhammadQasim17/auraguard)** | Native Android (Edge AI) | Kotlin, Jetpack Compose, LiteRT, Room Database, Android Services, TelecomManager | 2-Phase physical fall detection state machine (free-fall to high-G impact), 16kHz PCM audio stream DSP classification, and autonomous dual-SIM telecom routing. |
+| **[FieldOps Platform](https://github.com/MuhammadQasim17/fieldops-platform)** | Distributed Web & Mobile | React Native, Expo, Node.js, Express, PostgreSQL, Prisma ORM, Leaflet | Offline-first mobile architecture with local mutation queues and auto-sync, real-time Leaflet GPS fleet tracking, and in-memory PDF work order generation. |
+| **[HireHub](https://github.com/MuhammadQasim17/hirehub)** | Full-Stack Web (ATS) | React 19, Vite, Tailwind CSS, Node.js, Express, PostgreSQL, Prisma ORM | Dual-persona Role-Based Access Control (Candidate/Recruiter), job discovery engine with duplicate submission guards, and automated Nodemailer lifecycle alerts. |
+
+### Flagship Build Deep Dives
+
+- **ClairDocs Enterprise (Desktop):**  
+  Engineered with Feature-First Clean Architecture and Riverpod state management to eliminate enterprise contract billing leakage. Pairs dual-pane document ingestion (PDF & Word `.docx`) with cryptographic SHA-256 hashing, a hybrid multimodal Gemini 3.8 Flash / Groq LLM audit pipeline, and an offline SQLite FFI vault (`clairdocs_vault.db`) packaged for Windows via MSIX.
+
+- **Beacon SOS (Native Android SDK 35):**  
+  A production-grade Android personal safety system engineered for instant emergency detection and autonomous dispatch. Combines hardware sensor fusion (accelerometer shake detection + continuous background `AudioRecord` voice trigger) with telephony call-state awareness, persistent Foreground Service WakeLocks for Doze-mode execution, and Google Play Services Fused Location Provider for live GPS SMS coordinates.
+
+---
+
+## Architecture & Project Structure
+
+The portfolio codebase separates content, state management, and visual components cleanly:
+
+```text
+src/
+├── assets/                  # Static graphical assets (SVGs, raster icons, hero art)
+│   ├── hero.png
+│   ├── react.svg
+│   └── vite.svg
+├── components/              # Modular presentation components
+│   ├── Certifications.jsx   # Academic degree timeline & verified credentials (CCNA, Meta)
+│   ├── Contact.jsx          # Interactive direct-message launcher & clipboard copy feedback
+│   └── Hero.jsx             # Profile headshot, technical highlights matrix, and quick stats
+├── data/
+│   └── portfolioData.js     # Single source of truth (profile, skills, projects, certifications)
+├── App.css                  # Minimal scoped style overrides
+├── App.jsx                  # Main view orchestration, category filtering, theme state, & modal
+├── index.css                # Tailwind CSS v4 imports & @custom-variant dark directive
+└── main.jsx                 # Application entry point mounting React 19 to DOM
+```
+
+### Architectural Principles
+
+1. **Decoupled Data Layer (`portfolioData.js`):**  
+   All portfolio content—including technical skill categories, project matrices, badges, architectural highlights, education records, and credential verification URLs—is decoupled from React presentation logic. Updates to projects or certifications require zero modifications to component JSX.
+
+2. **Zero-Flicker Theme Persistence:**  
+   `App.jsx` evaluates the user's stored preference from `localStorage` (`'portfolio-theme'`, defaulting to `'dark'`) during initial mount. It dynamically toggles `.dark` and `.light` classes on `document.documentElement`, which Tailwind CSS v4 resolves immediately via `@custom-variant dark (&:where(.dark, .dark *))`.
+
+3. **Reactive Layout & Category Filtering:**  
+   Category pills (`All`, `Desktop`, `Mobile`, `Full-Stack`) are computed dynamically with `useMemo` from `portfolioData.projects`. The grid layout intelligently adapts: Beacon SOS renders as a full-width featured flagship card (`lg:col-span-2`) with an internal two-column specification layout, followed by the remaining four builds in a balanced, symmetrical 2x2 grid.
+
+---
+
+## Quick Start & Deployment
+
+### Local Development Setup
+
+Prerequisites: Node.js (v18.0.0 or later) and npm.
+
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/MuhammadQasim17/portfolio.git
 cd portfolio
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Start local development server
+# 3. Start local development server with Vite HMR
 npm run dev
 
-# Run ESLint check
+# 4. Run ESLint code quality checks
 npm run lint
 
-# Generate production build
+# 5. Build optimized production distribution
 npm run build
+
+# 6. Preview the production build locally
+npm run preview
 ```
+
+### Deployment Pipeline
+
+The portfolio is configured for zero-config deployments on **Vercel**:
+- **Framework Preset:** Vite
+- **Build Command:** `npm run build` (`vite build`)
+- **Output Directory:** `dist`
+- **Install Command:** `npm install`
+
+Pushing commits to the `main` branch automatically triggers Vercel CI/CD, running type checks, bundling assets, and deploying to the global edge network.
 
 ---
 
-## 📬 Contact & Links
+## Contact & Links
 
 - **GitHub:** [github.com/MuhammadQasim17](https://github.com/MuhammadQasim17)
 - **LinkedIn:** [linkedin.com/in/muhammad-qasim-6a8857315](https://www.linkedin.com/in/muhammad-qasim-6a8857315)
@@ -93,4 +138,4 @@ npm run build
 
 ---
 
-© 2026 Muhammad Qasim. All rights reserved.
+License: [MIT](LICENSE) © 2026 Muhammad Qasim
