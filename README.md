@@ -24,7 +24,7 @@ The portfolio is deployed on Vercel with automatic continuous integration trigge
   Sahiwal, Punjab, Pakistan • muhammadqasim891011@gmail.com • github.com/MuhammadQasim17
  ------------------------------------------------------------------------------
   Core Disciplines: Flutter & Dart Desktop | Android Native SDK 35 | React 19 Web
-  Flagships: ClairDocs Enterprise (Desktop) • Beacon SOS (Native Android)
+  Flagships: ClairDocs Enterprise (Windows & Android) • Beacon SOS (Native Android)
 ================================================================================
 ```
 
@@ -38,7 +38,7 @@ A scannable overview of the five production-grade engineering builds highlighted
 
 | Project | Domain / Platform | Core Stack | Key Architectural Highlight |
 | :--- | :--- | :--- | :--- |
-| **[ClairDocs Enterprise](https://github.com/MuhammadQasim17/clairdocs)** | Cross-Platform Desktop | Flutter, Dart, Riverpod, Freezed, SQLite FFI, Gemini Flash, Syncfusion PDF, MSIX | Dual-pane PDF/Word ingestion with live SHA-256 evidentiary file hashing, deterministic financial variance math, and offline SQLite FFI vault. |
+| **[ClairDocs Enterprise](https://github.com/MuhammadQasim17/clairdocs)** | Cross-Platform (Windows Desktop & Android) | Flutter, Dart, Riverpod, Freezed, SQLite FFI, Gemini / Groq AI, fl_chart, Syncfusion PDF, MSIX | Multi-format ingestion (PDF, `.docx`, `.xlsx`/`.csv`) with SHA-256 evidentiary hashing, hybrid AI audit engine, deterministic variance math, and offline SQLite FFI vault. |
 | **[Beacon SOS](https://github.com/MuhammadQasim17/BeaconSOS_Final)** | Native Android (Safety) | Java, Kotlin, Android SDK 35, Jetpack Compose, Material 3, Firebase, SensorManager | Persistent Android 14+ Foreground Service with WakeLock Doze-mode survival, hardware accelerometer + AudioRecord sensor fusion, and automated GPS SMS dispatch. |
 | **[AuraGuard](https://github.com/MuhammadQasim17/auraguard)** | Native Android (Edge AI) | Kotlin, Jetpack Compose, LiteRT, Room Database, Android Services, TelecomManager | 2-Phase physical fall detection state machine (free-fall to high-G impact), 16kHz PCM audio stream DSP classification, and autonomous dual-SIM telecom routing. |
 | **[FieldOps Platform](https://github.com/MuhammadQasim17/fieldops-platform)** | Distributed Web & Mobile | React Native, Expo, Node.js, Express, PostgreSQL, Prisma ORM, Leaflet | Offline-first mobile architecture with local mutation queues and auto-sync, real-time Leaflet GPS fleet tracking, and in-memory PDF work order generation. |
@@ -46,8 +46,8 @@ A scannable overview of the five production-grade engineering builds highlighted
 
 ### Flagship Build Deep Dives
 
-- **ClairDocs Enterprise (Desktop):**  
-  Engineered with Feature-First Clean Architecture and Riverpod state management to eliminate enterprise contract billing leakage. Pairs dual-pane document ingestion (PDF & Word `.docx`) with cryptographic SHA-256 hashing, a hybrid multimodal Gemini 3.8 Flash / Groq LLM audit pipeline, and an offline SQLite FFI vault (`clairdocs_vault.db`) packaged for Windows via MSIX.
+- **ClairDocs Enterprise (Windows Desktop & Android):**  
+  Engineered with Feature-First Clean Architecture and Riverpod state management across Windows Desktop (MSIX) and Android to eliminate enterprise contract billing leakage. Pairs multi-format document ingestion (PDF, Word `.docx`, and `.xlsx` / `.csv` spreadsheets) with cryptographic SHA-256 hashing, a hybrid Gemini 3.8 Flash / Groq AI audit engine, `fl_chart` recovery analytics, and an offline SQLite FFI vault (`clairdocs_vault.db`).
 
 - **Beacon SOS (Native Android SDK 35):**  
   A production-grade Android personal safety system engineered for instant emergency detection and autonomous dispatch. Combines hardware sensor fusion (accelerometer shake detection + continuous background `AudioRecord` voice trigger) with telephony call-state awareness, persistent Foreground Service WakeLocks for Doze-mode execution, and Google Play Services Fused Location Provider for live GPS SMS coordinates.

@@ -23,16 +23,16 @@ export const portfolioData = {
       id: "clairdocs",
       title: "ClairDocs Enterprise",
       category: "Desktop",
-      badge: "Flutter & Dart • Enterprise Audit Desktop App",
-      tagline: "Autonomous Contract-to-Invoice Audit & Dispute Desktop System",
-      description: "An enterprise-grade desktop application built with Flutter and Dart to automate contract-to-invoice auditing and eliminate billing leakage through dual-pane document inspection, schema-constrained AI clause matching, and deterministic financial variance math.",
+      badge: "Flutter & Dart • Windows Desktop & Android",
+      tagline: "Cross-Platform Contract-to-Invoice Audit & Dispute System",
+      description: "A cross-platform Flutter and Dart application built for Windows Desktop (MSIX) and Android to automate contract-to-invoice auditing and eliminate billing leakage through multi-format document ingestion (PDF, Word .docx, and .xlsx / .csv spreadsheets), schema-constrained AI clause matching, and deterministic financial variance math.",
       highlights: [
-        "Feature-First Clean Architecture with Flutter Riverpod state management and Freezed immutable models.",
-        "Dual-pane PDF & Word (.docx) ingestion with live SHA-256 evidentiary file hashing.",
-        "Hybrid multimodal AI audit pipeline (Gemini 3.8 Flash with Groq fallback) paired with deterministic client-side variance calculations.",
-        "Offline-first SQLite FFI vault (clairdocs_vault.db), fl_chart recovery analytics, MSIX desktop packaging, and SMTP/Webhook dispute dispatch."
+        "Cross-platform Flutter & Dart Clean Architecture (Windows Desktop MSIX + Android) with Riverpod state management and Freezed immutable models.",
+        "Multi-format ingestion for PDF, Word (.docx), and spreadsheet (.xlsx / .csv) documents with live SHA-256 evidentiary file hashing.",
+        "Hybrid multimodal AI audit engine (Gemini 3.8 Flash with Groq fallback) paired with deterministic client-side variance calculations.",
+        "Offline-first SQLite FFI vault (clairdocs_vault.db), fl_chart recovery analytics, and automated SMTP/Webhook dispute dispatch."
       ],
-      tags: ["Flutter", "Dart", "Riverpod", "Freezed", "SQLite FFI", "Gemini AI", "Syncfusion PDF", "MSIX"],
+      tags: ["Flutter", "Dart", "Windows (MSIX)", "Android", "Riverpod", "Freezed", "SQLite FFI", "Gemini / Groq AI", "fl_chart", "Syncfusion PDF"],
       github: "https://github.com/MuhammadQasim17/clairdocs"
     },
     {
