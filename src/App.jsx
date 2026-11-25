@@ -113,16 +113,32 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Filter Categories
+  // Filter Categories (supports multi-category projects)
   const categories = useMemo(() => {
-    const unique = ['All', ...new Set(projects.map((p) => p.category))];
-    return unique;
+    const allCats = projects.flatMap((p) => p.categories || [p.category]);
+    return ['All', ...new Set(allCats)];
   }, [projects]);
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'All') return projects;
-    return projects.filter((p) => p.category === selectedCategory);
+    return projects.filter((p) =>
+      p.categories ? p.categories.includes(selectedCategory) : p.category === selectedCategory
+    );
   }, [projects, selectedCategory]);
+
+  // Balance 2-column grid: flagship builds span full width, and any trailing unpaired card spans full width
+  const projectsWithLayout = useMemo(() => {
+    const flagshipIds = new Set(['clairdocs', 'beaconsos']);
+    const nonFlagshipCount = filteredProjects.filter((p) => !flagshipIds.has(p.id)).length;
+
+    return filteredProjects.map((project, idx) => {
+      const isFlagship = flagshipIds.has(project.id);
+      const isLast = idx === filteredProjects.length - 1;
+      const isWide = isFlagship || (isLast && nonFlagshipCount % 2 === 1);
+
+      return { project, isFlagship, isWide };
+    });
+  }, [filteredProjects]);
 
   const scrollToSection = (id) => {
     setMobileMenuOpen(false);
@@ -159,22 +175,25 @@ export default function App() {
           badge: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/30',
           gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
           glow: 'group-hover:border-emerald-500/50',
-          dot: 'bg-emerald-400'
+          dot: 'bg-emerald-400',
+          accent: 'text-emerald-600 dark:text-emerald-400'
         };
       case 'Desktop':
         return {
-          badge: 'bg-violet-500/10 text-violet-300 border-violet-500/30',
+          badge: 'bg-violet-500/10 text-violet-700 dark:text-violet-300 border-violet-500/30',
           gradient: 'from-violet-500/20 via-purple-500/10 to-transparent',
           glow: 'group-hover:border-violet-500/50',
-          dot: 'bg-violet-400'
+          dot: 'bg-violet-400',
+          accent: 'text-violet-600 dark:text-violet-400'
         };
       case 'Full-Stack':
       default:
         return {
-          badge: 'bg-sky-500/10 text-sky-300 border-sky-500/30',
+          badge: 'bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/30',
           gradient: 'from-sky-500/20 via-blue-500/10 to-transparent',
           glow: 'group-hover:border-sky-500/50',
-          dot: 'bg-sky-400'
+          dot: 'bg-sky-400',
+          accent: 'text-sky-600 dark:text-sky-400'
         };
     }
   };
@@ -502,7 +521,9 @@ export default function App() {
                   const count =
                     cat === 'All'
                       ? projects.length
-                      : projects.filter((p) => p.category === cat).length;
+                      : projects.filter((p) =>
+                          p.categories ? p.categories.includes(cat) : p.category === cat
+                        ).length;
                   const isActive = selectedCategory === cat;
                   return (
                     <button
@@ -530,24 +551,23 @@ export default function App() {
 
             {/* Projects Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-              {filteredProjects.map((project) => {
+              {projectsWithLayout.map(({ project, isFlagship, isWide }) => {
                 const theme = getCategoryTheme(project.category);
-                const isFlagship = project.id === 'beaconsos' && selectedCategory === 'All';
 
                 return (
                   <div
                     key={project.id}
                     className={`group relative bg-white dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm dark:shadow-2xl hover:shadow-xl dark:hover:shadow-cyan-950/20 hover:-translate-y-1.5 ${
-                      isFlagship ? 'lg:col-span-2' : 'h-full'
+                      isWide ? 'lg:col-span-2' : 'h-full'
                     }`}
                   >
                     {/* Top ambient highlight gradient */}
                     <div
-                      className={`absolute top-0 inset-x-0 ${isFlagship ? 'h-48' : 'h-32'} bg-gradient-to-b ${theme.gradient} opacity-50 pointer-events-none group-hover:opacity-100 transition-opacity`}
+                      className={`absolute top-0 inset-x-0 ${isWide ? 'h-48' : 'h-32'} bg-gradient-to-b ${theme.gradient} opacity-50 pointer-events-none group-hover:opacity-100 transition-opacity`}
                     />
 
-                    {isFlagship ? (
-                      /* Flagship Horizontal / 2-Column Wide Layout */
+                    {isWide ? (
+                      /* Flagship / Full-Width Horizontal 2-Column Layout */
                       <div className="p-6 sm:p-8 lg:p-10 relative z-10 flex-1 flex flex-col justify-between">
                         <div>
                           {/* Card Header: Category Badge & Project Icon */}
@@ -563,10 +583,12 @@ export default function App() {
                                   <span className={`w-1.5 h-1.5 rounded-full ${theme.dot}`} />
                                   {project.badge || project.category}
                                 </span>
-                                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/25">
-                                  <Sparkles className="w-3 h-3 text-emerald-500 dark:text-emerald-400" />
-                                  <span>Featured Flagship</span>
-                                </span>
+                                {isFlagship && (
+                                  <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium border ${theme.badge}`}>
+                                    <Sparkles className={`w-3 h-3 ${theme.accent}`} />
+                                    <span>Featured Flagship</span>
+                                  </span>
+                                )}
                               </div>
                             </div>
 
@@ -590,7 +612,7 @@ export default function App() {
                                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors tracking-tight">
                                   {project.title}
                                 </h3>
-                                <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 mt-1 mb-3">
+                                <p className={`text-sm sm:text-base font-semibold ${theme.accent} mt-1 mb-3`}>
                                   {project.tagline}
                                 </p>
                                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -619,13 +641,13 @@ export default function App() {
                             {/* Right Column: Key Technical Architecture Checklist */}
                             <div className="lg:col-span-6 bg-slate-50 dark:bg-slate-950/60 p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800/80 space-y-3">
                               <h4 className="text-xs uppercase font-mono tracking-wider text-slate-800 dark:text-slate-200 font-bold flex items-center gap-2 mb-2">
-                                <Sparkles className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+                                <Sparkles className={`w-4 h-4 ${theme.accent}`} />
                                 <span>Core Technical Architecture</span>
                               </h4>
                               <div className="space-y-3">
                                 {project.highlights.map((highlight, idx) => (
                                   <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className={`w-4 h-4 ${theme.accent} flex-shrink-0 mt-0.5`} />
                                     <span className="leading-snug">{highlight}</span>
                                   </div>
                                 ))}

@@ -23,7 +23,8 @@ export const portfolioData = {
       id: "clairdocs",
       title: "ClairDocs Enterprise",
       category: "Desktop",
-      badge: "Flutter & Dart • Windows Desktop & Android",
+      categories: ["Desktop", "Mobile"],
+      badge: "Flutter & Dart • Desktop & Mobile (Android)",
       tagline: "Cross-Platform Contract-to-Invoice Audit & Dispute System",
       description: "A cross-platform Flutter and Dart application built for Windows Desktop (MSIX) and Android to automate contract-to-invoice auditing and eliminate billing leakage through multi-format document ingestion (PDF, Word .docx, and .xlsx / .csv spreadsheets), schema-constrained AI clause matching, and deterministic financial variance math.",
       highlights: [
@@ -39,6 +40,7 @@ export const portfolioData = {
       id: "beaconsos",
       title: "Beacon SOS",
       category: "Mobile",
+      categories: ["Mobile"],
       badge: "Native Android • Mobile Safety System",
       tagline: "Multi-Trigger Emergency Response App",
       description: "A production-grade personal safety Android application (SDK 35) engineered to detect critical emergencies via multi-sensor fusion (accelerometer shake detection, continuous background voice-keyword detection, and automated safety check-in timers) and dispatch instant SMS alerts with live GPS coordinates to trusted contacts.",
@@ -55,6 +57,7 @@ export const portfolioData = {
       id: "auraguard",
       title: "AuraGuard",
       category: "Mobile",
+      categories: ["Mobile"],
       tagline: "Edge-Native Telemetry & Proactive Safety Platform",
       description: "An enterprise-grade, edge-native Android personal safety platform engineered for continuous real-time threat detection, physical/acoustic anomaly inference, and automated emergency dispatch entirely on-device.",
       highlights: [
@@ -69,6 +72,7 @@ export const portfolioData = {
       id: "fieldops",
       title: "FieldOps Platform",
       category: "Full-Stack",
+      categories: ["Full-Stack"],
       tagline: "Enterprise Field Service & Operations Control Center",
       description: "A comprehensive field service management platform bridging office dispatchers managing fleet logistics with field technicians executing work orders on-site.",
       highlights: [
@@ -83,6 +87,7 @@ export const portfolioData = {
       id: "hirehub",
       title: "HireHub",
       category: "Full-Stack",
+      categories: ["Full-Stack"],
       tagline: "Recruitment & Applicant Tracking Platform (ATS)",
       description: "A full-stack production-ready platform connecting software engineering talent with verified employers through a streamlined application and tracking workflow.",
       highlights: [
