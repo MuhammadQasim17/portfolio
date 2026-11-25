@@ -1,9 +1,9 @@
 export const portfolioData = {
   profile: {
     name: "Muhammad Qasim",
-    title: "Software Engineer & Full-Stack / Mobile Systems Developer",
-    tagline: "Building high-performance web apps, native Android mobile systems, and edge-native AI telemetry platforms.",
-    about: "Recent Software Engineering graduate from the University of Sargodha with hands-on expertise in building full-stack web platforms (React, Node.js, Prisma, PostgreSQL), native Android applications in Java/Kotlin (edge-native ML, room database, background telemetry), and cross-platform desktop enterprise solutions (Flutter, Riverpod, SQLite FFI). Passionate about robust system architecture, clean code, offline-first resilience, and polished user experiences.",
+    title: "Software Engineer • Flutter & Dart / Mobile & Full-Stack Developer",
+    tagline: "Building cross-platform & desktop systems with Flutter & Dart, native Android apps in Java & Kotlin, and full-stack web platforms.",
+    about: "Software Engineering graduate (BSSE, University of Sargodha) focused on Flutter & Dart cross-platform and desktop applications, native Android engineering in Java & Kotlin, and full-stack web platforms (React, Node.js, Prisma, PostgreSQL). Experienced in Clean Architecture, reactive state management, offline-first persistence, and AI-assisted workflows.",
     avatarUrl: "/assets/profile-photo.jpg", // Place your headshot in your public/assets folder
     email: "muhammadqasim891011@gmail.com",
     phone: "+923708076745",
@@ -12,13 +12,29 @@ export const portfolioData = {
   },
 
   skills: {
-    languages: ["Java", "Kotlin", "JavaScript", "TypeScript", "Dart", "HTML", "CSS"],
-    frontendMobile: ["React 19", "Vite", "Tailwind CSS v4", "Jetpack Compose", "Flutter", "React Native", "Expo", "Material Design 3"],
-    backendDatabases: ["Node.js", "Express 5", "Prisma ORM", "PostgreSQL", "SQLite", "Firebase", "MySQL"],
+    languages: ["Dart", "Java", "Kotlin", "JavaScript", "TypeScript", "HTML", "CSS"],
+    frontendMobile: ["Flutter", "Jetpack Compose", "React 19", "Vite", "Tailwind CSS v4", "React Native", "Expo", "Material Design 3"],
+    backendDatabases: ["SQLite", "Firebase", "PostgreSQL", "Prisma ORM", "Node.js", "Express 5", "MySQL"],
     toolsDevOps: ["Android Studio", "VS Code", "Git & GitHub", "Docker", "Vercel", "Render", "Netlify"]
   },
 
   projects: [
+    {
+      id: "clairdocs",
+      title: "ClairDocs Enterprise",
+      category: "Desktop",
+      badge: "Flutter & Dart • Enterprise Audit Desktop App",
+      tagline: "Autonomous Contract-to-Invoice Audit & Dispute Desktop System",
+      description: "An enterprise-grade desktop application built with Flutter and Dart to automate contract-to-invoice auditing and eliminate billing leakage through dual-pane document inspection, schema-constrained AI clause matching, and deterministic financial variance math.",
+      highlights: [
+        "Feature-First Clean Architecture with Flutter Riverpod state management and Freezed immutable models.",
+        "Dual-pane PDF & Word (.docx) ingestion with live SHA-256 evidentiary file hashing.",
+        "Hybrid multimodal AI audit pipeline (Gemini 3.8 Flash with Groq fallback) paired with deterministic client-side variance calculations.",
+        "Offline-first SQLite FFI vault (clairdocs_vault.db), fl_chart recovery analytics, MSIX desktop packaging, and SMTP/Webhook dispute dispatch."
+      ],
+      tags: ["Flutter", "Dart", "Riverpod", "Freezed", "SQLite FFI", "Gemini AI", "Syncfusion PDF", "MSIX"],
+      github: "https://github.com/MuhammadQasim17/clairdocs"
+    },
     {
       id: "beaconsos",
       title: "Beacon SOS",
@@ -48,20 +64,6 @@ export const portfolioData = {
       ],
       tags: ["Kotlin", "Jetpack Compose", "LiteRT", "Room Database", "Android Services"],
       github: "https://github.com/MuhammadQasim17/auraguard"
-    },
-    {
-      id: "clairdocs",
-      title: "ClairDocs Enterprise",
-      category: "Desktop",
-      tagline: "Autonomous Contract-to-Invoice Audit & Dispute Desktop System",
-      description: "A high-performance desktop application built for enterprise finance operations to eliminate billing leakage through multi-modal AI cross-audits comparing invoices against governing legal contracts.",
-      highlights: [
-        "Side-by-side dual document ingestion (PDF & Word .docx) with SHA-256 cryptographic hash verification.",
-        "Hybrid multi-engine LLM audit pipeline powered by Google Gemini 3.8 Flash and Groq fallback.",
-        "Local SQLite FFI audit vault with dynamic analytics dashboards and automated SMTP/Webhook dispatch."
-      ],
-      tags: ["Flutter", "Dart", "Riverpod", "Gemini AI", "SQLite", "Syncfusion PDF"],
-      github: "https://github.com/MuhammadQasim17/clairdocs"
     },
     {
       id: "fieldops",

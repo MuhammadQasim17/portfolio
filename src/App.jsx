@@ -83,6 +83,27 @@ export default function App() {
   const [activeProjectModal, setActiveProjectModal] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Order primary languages & frameworks so Dart/Flutter leads, followed by Java/Kotlin
+  const orderedSkills = useMemo(() => {
+    const prioritize = (list = [], priorityOrder = []) => {
+      const filtered = list.filter((item) => item.toLowerCase() !== 'python');
+      return [...filtered].sort((a, b) => {
+        const idxA = priorityOrder.findIndex((p) => a.toLowerCase().includes(p.toLowerCase()));
+        const idxB = priorityOrder.findIndex((p) => b.toLowerCase().includes(p.toLowerCase()));
+        const rankA = idxA === -1 ? priorityOrder.length : idxA;
+        const rankB = idxB === -1 ? priorityOrder.length : idxB;
+        return rankA - rankB;
+      });
+    };
+
+    return {
+      languages: prioritize(skills.languages, ['dart', 'java', 'kotlin', 'c++', 'javascript', 'typescript']),
+      frontendMobile: prioritize(skills.frontendMobile, ['flutter', 'android', 'react', 'vite', 'tailwind']),
+      backendDatabases: prioritize(skills.backendDatabases, ['sqlite', 'firebase', 'mysql']),
+      toolsDevOps: prioritize(skills.toolsDevOps, ['git', 'github', 'android studio', 'vs code', 'msix']),
+    };
+  }, [skills]);
+
   // Monitor scroll for navbar elevation
   useEffect(() => {
     const handleScroll = () => {
@@ -166,13 +187,13 @@ export default function App() {
         <div className="absolute top-1/3 -right-20 w-[600px] h-[600px] bg-indigo-600/10 dark:bg-indigo-600/10 rounded-full blur-[160px]" />
         <div className="absolute -bottom-40 left-1/3 w-[500px] h-[500px] bg-blue-600/10 dark:bg-blue-600/10 rounded-full blur-[150px]" />
         {/* Subtle grid pattern overlay */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03] bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px]"
         />
       </div>
 
       {/* =========================================================================
-          1. STICKY GLASSMORPHISM NAVBAR
+1. STICKY GLASSMORPHISM NAVBAR
       ========================================================================= */}
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
@@ -338,12 +359,12 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="flex-1 z-10">
         {/* =========================================================================
-            2. STRIKING HERO SECTION
+2. STRIKING HERO SECTION
         ========================================================================= */}
         <Hero profile={profile} scrollToSection={scrollToSection} />
 
         {/* =========================================================================
-            3. SKILLS & TECHNICAL ARSENAL
+3. SKILLS & TECHNICAL ARSENAL
         ========================================================================= */}
         <section id="skills" className="py-20 bg-slate-100/60 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800/60 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -356,7 +377,7 @@ export default function App() {
                 Engineering Stack & Toolchain
               </h2>
               <p className="text-base text-slate-600 dark:text-slate-400">
-                A multidisciplinary repertoire spanning systems programming, modern reactive frontends, resilient backend APIs, and native mobile development.
+                Focused on Flutter & Dart cross-platform and desktop engineering, Java & Kotlin mobile development, and modern web applications.
               </p>
             </div>
 
@@ -369,11 +390,11 @@ export default function App() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white text-base">Languages</h3>
-                    <p className="text-xs text-slate-500 font-mono">Foundations & Logic</p>
+                    <p className="text-xs text-slate-500 font-mono">Dart, Java, Kotlin & Core</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {skills.languages.map((lang) => (
+                  {orderedSkills.languages.map((lang) => (
                     <span
                       key={lang}
                       className="px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-100 dark:bg-slate-950/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 group-hover:border-slate-300 dark:group-hover:border-slate-700 hover:text-cyan-600 dark:hover:text-cyan-300 hover:border-cyan-500/40 transition-all"
@@ -384,19 +405,19 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Category 2: Frontend & Mobile */}
+              {/* Category 2: Frameworks & Mobile */}
               <div className="bg-white dark:bg-slate-900/70 rounded-2xl p-6 border border-slate-200/90 dark:border-slate-800/80 hover:border-emerald-500/40 transition-all duration-300 group hover:-translate-y-1 shadow-sm dark:shadow-lg">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
                     <Smartphone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white text-base">Frontend & Mobile</h3>
-                    <p className="text-xs text-slate-500 font-mono">Interfaces & Reactive UX</p>
+                    <h3 className="font-bold text-slate-900 dark:text-white text-base">Frameworks & Mobile</h3>
+                    <p className="text-xs text-slate-500 font-mono">Flutter, Android & Reactive UI</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {skills.frontendMobile.map((tool) => (
+                  {orderedSkills.frontendMobile.map((tool) => (
                     <span
                       key={tool}
                       className="px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-100 dark:bg-slate-950/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 group-hover:border-slate-300 dark:group-hover:border-slate-700 hover:text-emerald-600 dark:hover:text-emerald-300 hover:border-emerald-500/40 transition-all"
@@ -415,11 +436,11 @@ export default function App() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white text-base">Backend & Data</h3>
-                    <p className="text-xs text-slate-500 font-mono">APIs, Relational & ORMs</p>
+                    <p className="text-xs text-slate-500 font-mono">SQLite FFI, Firebase & SQL</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {skills.backendDatabases.map((db) => (
+                  {orderedSkills.backendDatabases.map((db) => (
                     <span
                       key={db}
                       className="px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-100 dark:bg-slate-950/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 group-hover:border-slate-300 dark:group-hover:border-slate-700 hover:text-blue-600 dark:hover:text-blue-300 hover:border-blue-500/40 transition-all"
@@ -438,11 +459,11 @@ export default function App() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white text-base">Tools & DevOps</h3>
-                    <p className="text-xs text-slate-500 font-mono">IDEs, CI/CD & Cloud Platforms</p>
+                    <p className="text-xs text-slate-500 font-mono">IDEs, Packaging & Workflows</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {skills.toolsDevOps.map((tool) => (
+                  {orderedSkills.toolsDevOps.map((tool) => (
                     <span
                       key={tool}
                       className="px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-100 dark:bg-slate-950/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 group-hover:border-slate-300 dark:group-hover:border-slate-700 hover:text-violet-600 dark:hover:text-violet-300 hover:border-violet-500/40 transition-all"
@@ -457,7 +478,7 @@ export default function App() {
         </section>
 
         {/* =========================================================================
-            4. INTERACTIVE PROJECTS GRID WITH CATEGORY FILTERS
+4. INTERACTIVE PROJECTS GRID WITH CATEGORY FILTERS
         ========================================================================= */}
         <section id="projects" className="py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -471,7 +492,7 @@ export default function App() {
                   Featured Engineering Systems
                 </h2>
                 <p className="text-base text-slate-600 dark:text-slate-400 mt-2 max-w-xl">
-                  Deeply architected solutions covering real-time sensor DSP, enterprise financial audits, logistics dispatchers, and recruiter ATS platforms.
+                  Selected projects across Flutter/Dart enterprise auditing, native Android safety systems, operations platforms, and recruitment tools.
                 </p>
               </div>
 
@@ -794,7 +815,7 @@ export default function App() {
         )}
 
         {/* =========================================================================
-            5. EDUCATION & CERTIFICATIONS TIMELINE SECTION
+5. EDUCATION & CERTIFICATIONS TIMELINE SECTION
         ========================================================================= */}
         <section id="timeline" className="py-24 bg-slate-100/50 dark:bg-slate-900/20 border-t border-slate-200 dark:border-slate-800/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -807,7 +828,7 @@ export default function App() {
                 Education & Certifications
               </h2>
               <p className="text-base text-slate-600 dark:text-slate-400">
-                Formal education in Software Engineering paired with continuous industry certifications in networking, mobile engineering, Swift, and UX design.
+                Formal education in Software Engineering paired with technical certifications in networking, mobile engineering, and UI/UX.
               </p>
 
               {/* View Filter Switcher */}
@@ -909,13 +930,13 @@ export default function App() {
         </section>
 
         {/* =========================================================================
-            6. GET IN TOUCH / CONTACT SECTION
+6. GET IN TOUCH / CONTACT SECTION
         ========================================================================= */}
         <Contact profile={profile} />
       </main>
 
       {/* =========================================================================
-          7. PROFESSIONAL FOOTER
+7. PROFESSIONAL FOOTER
       ========================================================================= */}
       <footer className="border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-950 relative z-10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -931,7 +952,7 @@ export default function App() {
                 <span className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">{profile.name}</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-                Software Engineer specialized in high-performance full-stack web platforms, native Android edge ML, and cross-platform desktop architectures.
+                Software Engineer focused on Flutter & Dart cross-platform/desktop applications, Java & Kotlin mobile systems, and modern full-stack web platforms.
               </p>
               <div className="flex items-center gap-3 pt-2">
                 <a
