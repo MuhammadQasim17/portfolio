@@ -1,6 +1,6 @@
 # Muhammad Qasim — Software Engineering Portfolio
 
-> Software Engineer specializing in cross-platform desktop architectures using Flutter and Dart, alongside production-grade native Android systems engineering with Java and Kotlin. Experienced in building distributed full-stack web platforms, offline-first data pipelines, and responsive client architectures with clean design systems.
+> Software Engineer specializing in Flutter & Dart cross-platform/desktop architectures, Java & Kotlin native Android engineering, and full-stack web platforms (React 19, Node.js, Prisma, PostgreSQL). Experienced in integrating AI / LLM APIs (Gemini, Groq, LiteRT) into mobile, desktop, and web applications, alongside Clean Architecture, reactive state management, and offline-first persistence.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-iota-one-pfywhhi4lb.vercel.app)
 [![React 19](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -21,7 +21,7 @@ The portfolio is deployed on Vercel with automatic continuous integration trigge
  [ Light Mode ]                                                 [ Dark Mode ]
  ------------------------------------------------------------------------------
   Muhammad Qasim | Software Engineer & Systems Developer
-  Punjab, Pakistan • muhammadqasim891011@gmail.com • github.com/MuhammadQasim17
+  Sahiwal, Punjab, Pakistan • muhammadqasim891011@gmail.com • github.com/MuhammadQasim17
  ------------------------------------------------------------------------------
   Core Disciplines: Flutter & Dart Desktop | Android Native SDK 35 | React 19 Web
   Flagships: ClairDocs Enterprise (Desktop) • Beacon SOS (Native Android)
@@ -134,7 +134,7 @@ Pushing commits to the `main` branch automatically triggers Vercel CI/CD, runnin
 - **LinkedIn:** [linkedin.com/in/muhammad-qasim-6a8857315](https://www.linkedin.com/in/muhammad-qasim-6a8857315)
 - **Email:** [muhammadqasim891011@gmail.com](mailto:muhammadqasim891011@gmail.com)
 - **Phone / WhatsApp:** +92 370 8076745
-- **Location:** Punjab, Pakistan
+- **Location:** Sahiwal, Punjab, Pakistan
 
 ---
 

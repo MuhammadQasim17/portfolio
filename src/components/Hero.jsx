@@ -197,7 +197,7 @@ export default function Hero({ profile = portfolioData.profile, scrollToSection 
                   </p>
                   <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1 mt-1">
                     <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
-                    <span>Punjab, Pakistan</span>
+                    <span>Sahiwal, Punjab, Pakistan</span>
                   </p>
                 </div>
 

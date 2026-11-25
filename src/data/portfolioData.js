@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "Muhammad Qasim",
     title: "Software Engineer • Flutter & Dart / Mobile & Full-Stack Developer",
     tagline: "Building cross-platform & desktop systems with Flutter & Dart, native Android apps in Java & Kotlin, and full-stack web platforms.",
-    about: "Software Engineering graduate (BSSE, University of Sargodha) focused on Flutter & Dart cross-platform and desktop applications, native Android engineering in Java & Kotlin, and full-stack web platforms (React, Node.js, Prisma, PostgreSQL). Experienced in Clean Architecture, reactive state management, offline-first persistence, and AI-assisted workflows.",
+    about: "Software Engineering graduate (BSSE, University of Sargodha) focused on Flutter & Dart cross-platform and desktop applications, native Android engineering in Java & Kotlin, and full-stack web platforms (React, Node.js, Prisma, PostgreSQL). Experienced in integrating AI / LLM APIs into mobile, desktop, and web applications, alongside Clean Architecture, reactive state management, and offline-first persistence.",
     avatarUrl: "/assets/profile-photo.jpg", // Place your headshot in your public/assets folder
     email: "muhammadqasim891011@gmail.com",
     phone: "+923708076745",
